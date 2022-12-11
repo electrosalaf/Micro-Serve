@@ -5,9 +5,9 @@ spring:
     application:
         name: notification
     datasource:
-        password: 'Electrosalaf_96'
+        password: Electrosalaf_96
         url: jdbc:postgresql://localhost:5432/notification
-        username: 'decagon'
+        username: decagon
     jpa:
         hibernate:
             ddl-auto: create-drop
@@ -16,20 +16,17 @@ spring:
                 dialect: org.hibernate.dialect.PostgreSQLDialect
                 format_sql: true
         show-sql: true
-
+    rabbitmq:
+        addresses: localhost:5672
     zipkin:
         base-url: http://localhost:9411
 
-    rabbitmq:
-        addresses: localhost:5672
-
 eureka:
     client:
-        service-url:
-            defaultZone: http://localhost:8761/eureka
         fetch-registry: true
         register-with-eureka: true
-
+        service-url:
+            defaultZone: http://localhost:8761/eureka
 rabbitmq:
     exchanges:
         internal: internal.exchange
